@@ -78,8 +78,8 @@ function bookingID()  {
             if(err) throw err;
             if(results.length) {
                 id=results[0].bookid;
-                bid=id; 
-            }                               
+                bid=id;
+            }
         }
     );    
     return id;
@@ -258,10 +258,10 @@ app.post("/avl",(req,res) => {
 });
 
 app.listen(3000,() => {
-    var lol=bookingID();
     console.log('Server on board');    
     connection.connect((err) => {
         if(err) throw err;
         console.log('Database connected');
+        var lol=bookingID(); // no significance of lol just assigning to bid
     });
 });
